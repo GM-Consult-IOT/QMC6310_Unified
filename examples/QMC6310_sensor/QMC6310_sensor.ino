@@ -32,6 +32,7 @@
 
  ***************************************************************************/
 #include <Arduino.h>
+#include <inttypes.h>
 #include <Wire.h> 
 #include <QMC6310_Unified.h>
 

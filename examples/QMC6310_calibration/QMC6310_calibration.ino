@@ -18,6 +18,9 @@ Release under the GNU General Public License v3
 
 
 */
+#include <Arduino.h>
+#include <inttypes.h>
+#include <Wire.h> 
 #include <QMC6310_Unified.h>
 
 QMC6310_Unified compass;
