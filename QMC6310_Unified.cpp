@@ -118,7 +118,13 @@ void QMC6310_Unified::read() {
   Wire.send(QMC6310_REGISTER_MAG_OUT_X_H_M);
 #endif
   Wire.endTransmission(false);
+  uint8_t ret = Wire.requestFrom((byte)QMC6310_ADDRESS_MAG, (byte)6, (uint8_t)1);
+// Note high before low (different than accel)
 #if ARDUINO >= 100
+  // while(Wire.available()<6); //Wait if above blocking then this not needed.
+  //   _magData.x   = (int16_t)(Wire.read() | Wire.read() << 8);
+  //   _magData.y  = (int16_t)(Wire.read() | Wire.read() << 8);
+  //   _magData.z  = (int16_t)(Wire.read() | Wire.read() << 8);
   uint8_t xlo = Wire.read();
   uint8_t xhi = Wire.read();
   uint8_t ylo = Wire.read();
@@ -193,14 +199,17 @@ bool QMC6310_Unified::begin() {
 
 
 byte QMC6310_Unified::status() {  
+  uint8_t ret;
   // Write to the STATUS register to request status
   Wire.beginTransmission(QMC6310_ADDRESS_MAG);  
   #if ARDUINO >= 100
   Wire.write(0x09);
+  ret = Wire.endTransmission(false);
   #else
   Wire.send(QMC6310_REGISTER_MAG_SR_REG_Mg);
   #endif
   // read the value and update _staus
+  ret = Wire.requestFrom((byte)QMC6310_ADDRESS_MAG, (byte)1);
   #if ARDUINO >= 100
   _status = Wire.read();
   #else
