@@ -85,9 +85,9 @@ Refer to the [sensor example](https://github.com/GM-Consult-IOT/QMC6310_Unified/
 
 ## Calibration
 
-The driver allows for the setting of a calibration array using the `setCalibration` method. The [setCalibration] method requires six integer values `X_MIN, X_MAX, Y_MIN, Y_MAX, Z_MIN and Z_MAX`. These are the maximum and minimum magnetic flux vector values obtained when the sensor is rotated fully around all three axes. The calibration values are used to scale and offset the raw readings and make a reasonable job of correcting for hard-iron and soft-iron distortions.
+The driver allows for the setting of a calibration array using the `setCalibration()` method. The `setCalibration()` method requires six integer values `X_MIN, X_MAX, Y_MIN, Y_MAX, Z_MIN and Z_MAX`. These are the maximum and minimum magnetic flux vector values obtained when the sensor is rotated fully around all three axes. The calibration values are used to scale and offset the raw readings and make a reasonable job of correcting for hard-iron and soft-iron distortions.
 
-Calibration is essential to obtain reasonable heading outputs from the measured flux vectors. With no calibration the calculated headings are not only offset but also non-linear with respect to the compass directions. To obtain accurate headings, your implementation should also apply a tilt correction.
+Calibration is essential to obtain reasonable heading outputs from the measured flux vectors. Without calibration the calculated headings are not only offset but also non-linear with respect to the compass directions. To obtain accurate headings, your implementation should also apply a tilt correction (from a 3-axis accelerometer/gyro).
 
 The [calibration example](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/examples/QMC6310_sensor_calibration/QMC6310_sensor_calibration.ino) contains a sketch that shows how the calibration values may be obtained.
 
