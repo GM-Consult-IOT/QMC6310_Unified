@@ -21,7 +21,7 @@ This library is a driver for the [QMC6310 magnetometer/compass IC from QST Corpo
 
 ## About the QMC6310
 
-The QMC6310 is a three-axis magnetic sensor, which integrates magnetic sensors and signal condition ASIC into one silicon chip.  The QMC6310 enables 1° to 2° compass heading accuracy. The I²C serial bus allows for easy interface.
+The QMC6310 is a three-axis magnetic sensor, which integrates magnetic sensors and a signal condition ASIC into one silicon chip.  The QMC6310 enables 1° to 2° compass heading accuracy. The I²C serial bus allows for easy interface.
 
 More information on the QMC6310 can be found in the [datasheet](https://github.com/GM-Consult-IOT/libraries/blob/main/datasheets/QMC6310_magnetometer_qst.pdf).
 

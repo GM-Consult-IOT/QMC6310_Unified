@@ -1,5 +1,13 @@
 <!-- QMC6310_Unified -->
 
+## 1.0.3+1
+
+* Minor doc changes.
+
+## 1.0.3
+
+* Documentation edits on examples.
+
 ## 1.0.2
 
 * Changed example names.
