@@ -1,5 +1,11 @@
 <!-- QMC6310_Unified -->
 
+
+## 1.0.2
+
+* Changed example names.
+* Documentation edits.
+
 ## 1.0.1
 
 * Minor code cleanup, removed debug variable definitions.

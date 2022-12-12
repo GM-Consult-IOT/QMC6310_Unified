@@ -93,7 +93,7 @@ The [calibration example](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob
 
 ## Licensing
 
-This library is open-source under the [BSD 3-Clause license](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/LICENSE) and redistribution and use in source and binary forms, with or without modification, are permitted provided that the license conditions are met.
+This library is open-source under the [BSD 3-Clause license](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/LICENSE) and redistribution and use in source and binary forms, with or without modification, are permitted, provided that the license conditions are met.
 
 The original HMC5883 driver was written by Kevin Townsend for Adafruit Industries with some heading example from [Love Electronics](loveelectronics.co.uk). The Adafruit library is open-source under the [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html). *Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!*
 
