@@ -7,7 +7,7 @@
   enables 1° to 2° compass heading accuracy. The I²C serial bus allows for 
   easy interface.
   
-  The library is a fork of the [Adafruit HMC5883L Driver](https://github.com/adafruit/Adafruit_QMC6310_Unified) 
+  The library is based on the [Adafruit HMC5883L Driver](https://github.com/adafruit/Adafruit_QMC6310_Unified) 
   for the [Adafruit HMC5883 Breakout](http://www.adafruit.com/products/1746).
  
   The original HMC5883 driver was written by Kevin Townsend for Adafruit 
@@ -22,9 +22,9 @@
   
   *** You will also need to install the Adafruit_Sensor library! ***
 
-  Adafruit invests time and resources providing this open source code,
-  please support Adafruit andopen-source hardware by purchasing products
-  from Adafruit!
+  *Adafruit invests time and resources providing this open source code,
+  please support Adafruit and open-source hardware by purchasing products
+  from Adafruit!*
  
   This library is open-source under the [BSD 3-Clause license](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/LICENSE) 
   and redistribution and use in source and binary forms, with or without 

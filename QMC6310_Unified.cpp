@@ -7,7 +7,7 @@
  *
  * This library is a `Unified Sensor` driver for the QMC6310 magnetometer/compass IC from QST Corporation.
  * 
- * The library is a fork of the [Adafruit driver](https://github.com/adafruit/Adafruit_QMC6310_Unified) 
+ * The library is based on the [Adafruit driver](https://github.com/adafruit/Adafruit_QMC6310_Unified) 
  * for the [Adafruit HMC5883 Breakout](http://www.adafruit.com/products/1746).
  *
  * Adafruit invests time and resources providing this open source code, please support Adafruit and 
