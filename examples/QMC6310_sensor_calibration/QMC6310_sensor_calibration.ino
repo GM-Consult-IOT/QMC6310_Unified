@@ -4,27 +4,25 @@ After upload to the device, run the serial monitor and follow the directions.
 When prompted, copy the last line into the `setup()` method of your project's 
 actual sketch.
 
-***************************************************************************
-  This library is a [Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor) 
-  driver for the [QMC6310 magnetometer/compass IC from QST Corporation](https://www.qstcorp.com/en_comp_prod/QMC6310). 
+/***************************************************************************
+  This library is a Adafruit Unified Sensor (1) driver for the QMC6310 
+  magnetometer/compass IC from QST Corporation (2). 
   
   The QMC6310 is a three-axis magnetic sensor, which integrates magnetic 
   sensors and signal condition ASIC into one silicon chip.  The QMC6310 
   enables 1° to 2° compass heading accuracy. The I²C serial bus allows for 
   easy interface.
   
-  The library is based on the [Adafruit HMC5883L Driver](https://github.com/adafruit/Adafruit_QMC6310_Unified) 
-  for the [Adafruit HMC5883 Breakout](http://www.adafruit.com/products/1746).
+  The library is based on the Adafruit HMC5883L Driver (3) for the Adafruit 
+  HMC5883 Breakout (4).
  
   The original HMC5883 driver was written by Kevin Townsend for Adafruit 
-  Industries with some heading example from [Love Electronics](loveelectronics.co.uk). 
-  The Adafruit library is open-source under the 
-  [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
+  Industries. The Adafruit library is open-source under the 
+  [GPL-3.0 license] (5).
 
-  The calibration methods are from the [QMC5883L Compass Arduino Library by 
-  MPrograms](https://github.com/mprograms/QMC5883LCompass/), based on the 
-  work of [Claus Näveke - TheNitek](https://github.com/TheNitek) and is 
-  open-source under the [GPL-3.0 license](https://github.com/mprograms/QMC5883LCompass/blob/master/LICENSE).
+  The calibration methods are from the QMC5883L Compass Arduino Library by 
+  MPrograms(6), based on the work of [Claus Näveke - TheNitek](7) and is 
+  open-source under the GPL-3.0 license(8).
   
   *** You will also need to install the Adafruit_Sensor library! ***
 
@@ -32,9 +30,20 @@ actual sketch.
   please support Adafruit and open-source hardware by purchasing products
   from Adafruit!*
  
-  This library is open-source under the [BSD 3-Clause license](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/LICENSE) 
-  and redistribution and use in source and binary forms, with or without 
+  This library is open-source under the BSD 3-Clause license (9) and 
+  redistribution and use in source and binary forms, with or without 
   modification, are permitted provided that the license conditions are met.
+
+  References:
+  1. https://github.com/adafruit/Adafruit_Sensor
+  2. https://www.qstcorp.com/en_comp_prod/QMC6310
+  4. https://github.com/adafruit/Adafruit_HMC5883_Unified
+  4. http://www.adafruit.com/products/1746
+  5. https://www.gnu.org/licenses/gpl-3.0.en.html
+  6. https://github.com/mprograms/QMC5883LCompass/
+  7. https://github.com/TheNitek
+  8. https://github.com/mprograms/QMC5883LCompass/blob/master/LICENSE
+  9. https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/LICENSE
 
  ***************************************************************************/
 
@@ -55,7 +64,7 @@ void setup() {
   Serial.begin(115200);
   compass.begin();
   
-  Serial.println("This will provide calibration settings for your QMC5883L chip. When prompted, move the magnetometer in all directions until the calibration is complete.");
+  Serial.println("This will provide calibration settings for your QMC6310 chip. When prompted, ""move the magnetometer in all directions until the calibration is complete.");
   Serial.println("Calibration will begin in 5 seconds.");
   delay(5000);
   
