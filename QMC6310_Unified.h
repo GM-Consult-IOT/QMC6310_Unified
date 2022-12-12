@@ -44,10 +44,10 @@ typedef enum {
  * @brief Magnetometer gain settings
  */
 typedef enum {
-  QMC6310_MAGGAIN_30 = B00000000, // +/- 30 Gauss
-  QMC6310_MAGGAIN_12 = B00000100, // +/- 12 Gauss (default)
-  QMC6310_MAGGAIN_8 = B00001000, // +/- 8 Gauss
-  QMC6310_MAGGAIN_2 = B00001100 // +/- 2 Gauss
+  QMC6310_MAGGAIN_30 = 0b00000000, // +/- 30 Gauss
+  QMC6310_MAGGAIN_12 = 0b00000100, // +/- 12 Gauss (default)
+  QMC6310_MAGGAIN_8 = 0b00001000, // +/- 8 Gauss
+  QMC6310_MAGGAIN_2 = 0b00001100 // +/- 2 Gauss
 } qmc6310MagGain;
 
 /*!
