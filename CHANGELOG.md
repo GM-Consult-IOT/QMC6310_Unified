@@ -3,6 +3,8 @@
 ## 2.0.0
 
 * Chip id `(QMC6310_ID)` value changed to 0x80.
+* Added `QMC6310_REGISTER_MAG_CID_REG_M = 0x00` to enum `qmc6310MagRegisters_t`.
+* Minor doc changes.
 
 ## 1.0.3+1
 
