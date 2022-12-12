@@ -1,5 +1,6 @@
 # QMC6310  (3-Axis Magnetometer) Unified Sensor Driver
 
+A driver for the QMC6310 magnetometer/compass IC from QST Corporation.
 
 ## Contents
 - [QMC6310  (3-Axis Magnetometer) Unified Sensor Driver](#qmc6310--3-axis-magnetometer-unified-sensor-driver)
@@ -14,7 +15,7 @@
 
 ## Overview
 
-This library is a [Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor) driver for the [QMC6310 magnetometer/compass IC from QST Corporation](https://www.qstcorp.com/en_comp_prod/QMC6310). 
+This library is a driver for the [QMC6310 magnetometer/compass IC from QST Corporation](https://www.qstcorp.com/en_comp_prod/QMC6310). It implements the [Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor) interface.
 
 (*[back to top](#)*)
 
@@ -34,7 +35,7 @@ Requires the [Adafruit Unified Sensor by Adafruit](https://github.com/adafruit/A
 
 ## Usage
 
-The driver is consistent with the Adafruit unified sensor abstraction layer. The sensor is initialized in the `setup` method by calling `begin` on a `QMC6310_Unified` driver instance. In the `loop` method, define a `sensors_event_t` event and pass it to the driver's `getEvent` method to populate the event with the most recent magnetic flux vectors.
+The driver is consistent with the `Adafruit Unified Sensor` abstraction layer. The sensor is initialized in the `setup` method by calling `begin` on a `QMC6310_Unified` driver instance. In the `loop` method, define a `sensors_event_t` event and pass it to the driver's `getEvent` method to populate the event with the most recent magnetic flux vectors.
 
 main.cpp
 ```C++
