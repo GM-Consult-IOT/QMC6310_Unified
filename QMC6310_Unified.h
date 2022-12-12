@@ -28,16 +28,17 @@
  @brief Registers
  */
 typedef enum {
-  QMC6310_REGISTER_MAG_CRA_REG_M = 0x0A,    // changed from 0x00 to 0x0a
-  QMC6310_REGISTER_MAG_CRB_REG_M = 0x0B,    // changed from 0x01 to 0x0b
-  QMC6310_REGISTER_MAG_OUT_X_L_M = 0x01,    // changed from 0x04 to 0x01
-  QMC6310_REGISTER_MAG_OUT_X_H_M = 0x02,    // changed from 0x03 to 0x02
-  QMC6310_REGISTER_MAG_OUT_Y_L_M = 0x03,    // changed from 0x08 to 0x03
-  QMC6310_REGISTER_MAG_OUT_Y_H_M = 0x04,    // changed from 0x07 to 0x04
-  QMC6310_REGISTER_MAG_OUT_Z_L_M = 0x05,    // changed from 0x06 to 0x05
-  QMC6310_REGISTER_MAG_OUT_Z_H_M = 0x06,    // changed from 0x05 to 0x06
-  QMC6310_REGISTER_MAG_SR_REG_Mg = 0x09,    // STATUS Register, remains the same
-  QMC6310_REGISTER_MAG_SGN_REG_M = 0x29,    // The SIGN register of the QMC6310 
+  QMC6310_REGISTER_MAG_CID_REG_M = 0x00,    // ID register. Value always 0x80
+  QMC6310_REGISTER_MAG_CRA_REG_M = 0x0A,    // Control register 1
+  QMC6310_REGISTER_MAG_CRB_REG_M = 0x0B,    // Control register 2
+  QMC6310_REGISTER_MAG_OUT_X_L_M = 0x01,    // Magnetic flux X LSB
+  QMC6310_REGISTER_MAG_OUT_X_H_M = 0x02,    // Magnetic flux X MSB
+  QMC6310_REGISTER_MAG_OUT_Y_L_M = 0x03,    // Magnetic flux Y LSB
+  QMC6310_REGISTER_MAG_OUT_Y_H_M = 0x04,    // Magnetic flux Y MSB
+  QMC6310_REGISTER_MAG_OUT_Z_L_M = 0x05,    // Magnetic flux Z LSB
+  QMC6310_REGISTER_MAG_OUT_Z_H_M = 0x06,    // Magnetic flux Z MSB
+  QMC6310_REGISTER_MAG_SR_REG_Mg = 0x09,    // STATUS Register
+  QMC6310_REGISTER_MAG_SGN_REG_M = 0x29,    // Axis SIGN register
 } qmc6310MagRegisters_t;
 
 /*!
@@ -61,9 +62,9 @@ typedef struct qmc6310MagData_s {
 } qmc6310MagData;
 
 /*!
- * @brief Chip ID
+ * @brief Chip ID from QMC6310 datasheet, stored in register 0x00.
  */
-#define QMC6310_ID (0b11010100)
+#define QMC6310_ID (0b10000000)
 
 //! Unified sensor driver for the QMC6310 magnetometer. ///
 class QMC6310_Unified : public Adafruit_Sensor {

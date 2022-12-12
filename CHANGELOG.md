@@ -1,5 +1,9 @@
 <!-- QMC6310_Unified -->
 
+## 2.0.0
+
+* Chip id `(QMC6310_ID)` value changed to 0x80.
+
 ## 1.0.3+1
 
 * Minor doc changes.
