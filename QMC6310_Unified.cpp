@@ -1,7 +1,7 @@
 /*!
- * @file QMC6310_U.cpp
+ * @file QMC6310_Unified.cpp
  *
- * @mainpage Adafruit HMC5883 Unified Library
+ * @mainpage QMC6310 Unified Library
  *
  * @section intro_sec Introduction
  *
@@ -40,16 +40,6 @@
 #include "QMC6310_Unified.h"
 
 static float _QMC6310_Gauss_LSB = 2500; // Varies with gain
-// static float _QMC6310_Gauss_LSB_Z = QMC6310_MAGGAIN_8;   // Varies with gain
-// static byte _status = 0x00; 
-
-// static qmc6310MagGain _fieldRange = QMC6310_MAGGAIN_12;
-/***************************************************************************
- MAGNETOMETER
- ***************************************************************************/
-/***************************************************************************
- PRIVATE FUNCTIONS
- ***************************************************************************/
 
 /**************************************************************************/
 /*!
