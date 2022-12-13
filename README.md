@@ -85,11 +85,7 @@ Refer to the [sensor example](https://github.com/GM-Consult-IOT/QMC6310_Unified/
 
 ## Calibration
 
-The driver allows for the setting of a calibration array using the `setCalibration()` method. The `setCalibration()` method requires six integer values `X_MIN, X_MAX, Y_MIN, Y_MAX, Z_MIN and Z_MAX`. These are the maximum and minimum magnetic flux vector values obtained when the sensor is rotated fully around all three axes. The calibration values are used to scale and offset the raw readings and make a reasonable job of correcting for hard-iron and soft-iron distortions.
-
 Calibration is essential to obtain reasonable heading outputs from the measured flux vectors. Without calibration the calculated headings are not only offset but also non-linear with respect to the compass directions. To obtain accurate headings, your implementation should also apply a tilt correction (from a 3-axis accelerometer/gyro).
-
-The [calibration example](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/examples/QMC6310_sensor_calibration/QMC6310_sensor_calibration.ino) contains a sketch that shows how the calibration values may be obtained.
 
 More information on sensor calibration [here](https://www.digikey.com.au/en/maker/projects/how-to-calibrate-a-magnetometer/50f6bc8f36454a03b664dca30cf33a8b).
 
@@ -99,9 +95,7 @@ More information on sensor calibration [here](https://www.digikey.com.au/en/make
 
 This library is open-source under the [BSD 3-Clause license](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/LICENSE) and redistribution and use in source and binary forms, with or without modification, are permitted, provided that the license conditions are met.
 
-The original HMC5883 driver was written by Kevin Townsend for Adafruit Industries with some heading example from [Love Electronics](loveelectronics.co.uk). The Adafruit library is open-source under the [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html). *Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!*
-
-The calibration methods are from the [QMC5883L Compass Arduino Library by MPrograms](https://github.com/mprograms/QMC5883LCompass/), based on the work of [Claus Näveke - TheNitek](https://github.com/TheNitek) and is open-source under the [GPL-3.0 license](https://github.com/mprograms/QMC5883LCompass/blob/master/LICENSE).
+The original HMC5883 driver was written by Kevin Townsend for Adafruit Industries. The Adafruit library is open-source under the [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html). *Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!*
 
 (*[back to top](#)*)
 

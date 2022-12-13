@@ -13,11 +13,7 @@
   The original HMC5883 driver was written by Kevin Townsend for Adafruit 
   Industries. The Adafruit library is open-source under the 
   [GPL-3.0 license] (5).
-
-  The calibration methods are from the QMC5883L Compass Arduino Library by 
-  MPrograms(6), based on the work of [Claus Näveke - TheNitek](7) and is 
-  open-source under the GPL-3.0 license(8).
-  
+ 
   *** You will also need to install the Adafruit_Sensor library! ***
 
   *Adafruit invests time and resources providing this open source code,
@@ -87,12 +83,7 @@ void setup() {
   // Display basic information about the QMC6310 sensor.
   displaySensorDetails();
   
-  /* 
-  Uncomment the line below to set the calibration values `X_MIN, X_MAX, Y_MIN, Y_MAX, Z_MIN and Z_MAX` 
-  if you have these. You can get an idea of the max/min for each axis by looking at the serial port output,
-  or use the sketch in the examples.
-  */
-  // mag.setCalibration(-43, 78, -53, 71, -65, 61);
+
 }
 
 void loop() {
@@ -101,8 +92,7 @@ void loop() {
   sensors_event_t event; 
   mag.getEvent(&event);
 
-  // Display the results (magnetic vector values are in micro-Tesla (uT)).  You can use the maximum and minimum values
-  // from this terminal listing to populate the paramaters for mag.setCalibration(X_MIN, X_MAX, Y_MIN, Y_MAX, Z_MIN, Z_MAX).
+  // Display the results (magnetic vector values are in micro-Tesla (uT)).  
   Serial.print("X: "); Serial.print(event.magnetic.x); Serial.print("  ");
   Serial.print("Y: "); Serial.print(event.magnetic.y); Serial.print("  ");
   Serial.print("Z: "); Serial.print(event.magnetic.z); Serial.print("  ");Serial.println("uT");

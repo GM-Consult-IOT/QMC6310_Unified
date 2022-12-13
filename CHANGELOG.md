@@ -1,5 +1,9 @@
 <!-- QMC6310_Unified -->
 
+## 3.0.0
+
+* BREAKING CHANGE: Calibration functions removed. Calibration will be included in a new [lodestone library](https://github.com/GM-Consult-IOT/lodestone) that processes magnetometer and accelerometer data to produce stable, calibrated compass output.
+
 ## 2.0.0
 
 * Chip id `(QMC6310_ID)` value changed to 0x80.
