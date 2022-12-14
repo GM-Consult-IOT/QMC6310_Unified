@@ -1,6 +1,6 @@
 <!-- QMC6310_Unified -->
 
-## 3.0.1+1
+## 3.0.1+2
 
 * `library.json` updated.
 
