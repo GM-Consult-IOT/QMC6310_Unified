@@ -1,9 +1,9 @@
-# QMC6310  (3-Axis Magnetometer) Unified Sensor Driver
+# QMC6310 (3-Axis Magnetometer) Unified Sensor Driver
 
-A driver for the QMC6310 magnetometer/compass IC from QST Corporation.
+A Unified Sensor driver for the QMC6310 magnetometer/compass IC from QST Corporation.
 
 ## Contents
-- [QMC6310  (3-Axis Magnetometer) Unified Sensor Driver](#qmc6310--3-axis-magnetometer-unified-sensor-driver)
+- [QMC6310 (3-Axis Magnetometer) Unified Sensor Driver](#qmc6310-3-axis-magnetometer-unified-sensor-driver)
   - [Contents](#contents)
   - [Overview](#overview)
   - [About the QMC6310](#about-the-qmc6310)
@@ -23,13 +23,13 @@ This library is a driver for the [QMC6310 magnetometer/compass IC from QST Corpo
 
 The QMC6310 is a three-axis magnetic sensor, which integrates magnetic sensors and a signal condition ASIC into one silicon chip.  The QMC6310 enables 1° to 2° compass heading accuracy. The I²C serial bus allows for easy interface.
 
-More information on the QMC6310 can be found in the [datasheet](https://github.com/GM-Consult-IOT/libraries/blob/main/datasheets/QMC6310_magnetometer_qst.pdf).
+More information on the QMC6310 can be found in the [datasheet](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/main/assets/QMC6310_Datasheet.pdf).
 
 (*[back to top](#)*)
 
 ## Dependencies
 
-Requires the [Adafruit Unified Sensor by Adafruit](https://github.com/adafruit/Adafruit_Sensor).
+Requires the [Adafruit Unified Sensor by Adafruit](https://github.com/adafruit/Adafruit_Sensor), version ^1.1.6.
 
 (*[back to top](#)*)
 
@@ -39,41 +39,56 @@ The driver is consistent with the `Adafruit Unified Sensor` abstraction layer. T
 
 main.cpp
 ```C++
+
 #include <Arduino.h>
 #include <Wire.h> 
 #include <QMC6310_Unified.h>
 
-// Hydrate a sensor and assign a unique ID 
-QMC6310_Unified mag = QMC6310_Unified(12345);
+// hydrate the sensor driver and assign a unique ID 
+QMC6310_Unified mag_sensor = QMC6310_Unified(12345);
 
 void setup() {
   
-  // start the i2c comms
+  // start i2c comms
   Wire.begin(); 
   
   // start serial port
   Serial.begin(115200); 
 
-  // Initialise the sensor and handle status errors
-  if (!mag.begin()){
-    Serial.println("Error connecting to QMC6310. Status code is " + String(mag.status()));
+  // print a separator to serial terminal
+  Serial.println(F("\n------------------------------------"));
+
+  // initialise the sensor and handle status errors
+  if (!mag_sensor.begin()){
+
+    // echo the error to serial monitor
+    Serial.println("Error connecting to QMC6310.") ;
     while(1);
-  }
+  } 
+
+  // echo the device status code to serial monitor
+  Serial.println("QMC6310 STATUS 0x" + String(mag_sensor.status(), HEX));
+
+  // echo the sensor details to serial terminal
+  mag_sensor.printSensorDetails();
+
 }
 
 void loop() {
 
-    // Get a new sensor event
+  // initialize the sensor event
   sensors_event_t event; 
-  mag.getEvent(&event);
 
-  // Calculate heading (in radians) from the event.magnetic vectors.
-  float heading = atan2(event.magnetic.y, event.magnetic.x);
+  // populate the event properties with latest magnetometer values
+  mag_sensor.getEvent(&event);
 
-  // Display the results (magnetic vector values are in micro-Tesla (uT)) */
+  // echo the results to serial terminal (magnetic vector values are in micro-Tesla (uT))
   Serial.print("X: "); Serial.print(event.magnetic.x); Serial.print("  ");
   Serial.print("Y: "); Serial.print(event.magnetic.y); Serial.print("  ");
   Serial.print("Z: "); Serial.print(event.magnetic.z); Serial.print("  ");Serial.println("uT");
+
+  // wait a second
+  delay(1000);
   
 }
 

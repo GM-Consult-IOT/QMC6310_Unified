@@ -1,5 +1,11 @@
 <!-- QMC6310_Unified -->
 
+## 3.0.1
+
+* Documentation updated.
+* Example updated.
+* Replaced `library.properties` with `library.json`.
+
 ## 3.0.0
 
 * BREAKING CHANGE: Calibration functions removed. Calibration will be included in a new [lodestone library](https://github.com/GM-Consult-IOT/lodestone) that processes magnetometer and accelerometer data to produce stable, calibrated compass output.

@@ -5,19 +5,33 @@
  *
  * @section intro_sec Introduction
  *
- * This library is a `Unified Sensor` driver for the QMC6310 magnetometer/compass IC from QST Corporation.
- * See https://www.qstcorp.com/upload/pdf/202202/%EF%BC%88%E5%B7%B2%E4%BC%A0%EF%BC%8913-52-17%20QMC6310%20Datasheet%20Rev.C(1).pdf
- * for the device datasheet.* 
+ * A Unified Sensor (1) driver for the QMC6310 magnetometer/compass IC (2) 
+ * from QST Corporation. 
  * 
- * The library is based on the [Adafruit driver](https://github.com/adafruit/Adafruit_QMC6310_Unified) 
- * for the [Adafruit HMC5883 Breakout](http://www.adafruit.com/products/1746).
- *
- * Adafruit invests time and resources providing this open source code, please support Adafruit and 
- * open-source hardware by purchasing products from Adafruit!
- *
- * @section author Author
- *
- * Adapted by Gerhard Malan from original work by Kevin Townsend for Adafruit Industries.
+ * The QMC6310 is a three-axis magnetic sensor with I²C serial interface that 
+ * integrates magnetic sensors and a signal condition ASIC into one silicon 
+ * chip.
+ * 
+ * The library requires the `adafruit/Adafruit Unified Sensor@^1.1.6`.
+ * 
+ * The library is based on the Adafruit HMC5883L Driver (3) for the Adafruit 
+ * HMC5883 Breakout (4). The original HMC5883 driver was written by Kevin 
+ * Townsend for Adafruit Industries. The Adafruit HMC5883L Driver library is 
+ * open-source under the GPL-3.0 license (5). Adafruit invests time and 
+ * resources providing this open source code, please support Adafruit and 
+ * open-source hardware by purchasing products from Adafruit.
+ * 
+ * This library is open-source under the BSD 3-Clause license (6) and 
+ * redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the license conditions are met.
+ * 
+ * References:
+ * 1. https://github.com/adafruit/Adafruit_Sensor
+ * 2. https://www.qstcorp.com/en_comp_prod/QMC6310
+ * 4. https://github.com/adafruit/Adafruit_HMC5883_Unified
+ * 4. http://www.adafruit.com/products/1746
+ * 5. https://www.gnu.org/licenses/gpl-3.0.en.html
+ * 6. https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/LICENSE
  *
  * @section license License
  *
@@ -204,12 +218,12 @@ void QMC6310_Unified::getSensor(sensor_t *sensor) {
   memset(sensor, 0, sizeof(sensor_t));
 
   /* Insert the sensor name in the fixed length char array */
-  strncpy(sensor->name, "QMC6310", sizeof(sensor->name) - 1);
+  strncpy(sensor->name, SENSOR_NAME, sizeof(sensor->name) - 1);
   sensor->name[sizeof(sensor->name) - 1] = 0;
   sensor->version = DRIVER_VERSION;
   sensor->sensor_id = _sensorID;
   sensor->type = SENSOR_TYPE_MAGNETIC_FIELD;
-  sensor->min_delay = 0;
+  sensor->min_delay = 0;    // minimum delay 0
   sensor->max_value = 800;  // 8 gauss == 800 microTesla
   sensor->min_value = -800; // -8 gauss == -800 microTesla
   sensor->resolution = 0.2; // 2 milligauss == 0.2 microTesla
