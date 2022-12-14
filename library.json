@@ -1,7 +1,7 @@
 {
     "name": "QMC6310 Unified",
-    "version": "3.0.1",
-    "description": "A Unified Sensor driver for the QMC6310 magnetometer/compass IC from QST Corporation. It requires the `Adafruit Unified Sensor` The QMC6310 is a three-axis magnetic sensor with I²C serial interfacethat integrates magnetic sensors and a signal condition ASIC into one silicon chip.",
+    "version": "3.0.1+1",
+    "description": "A Unified Sensor driver for the QMC6310 magnetometer/compass IC from QST Corporation. The QMC6310 is a three-axis magnetic sensor with I²C serial interface that integrates magnetic sensors and a signal condition ASIC into one silicon chip.\nThe library requires the `Adafruit Unified Sensor`.",
     "keywords": "magnetometer, I2C, magsensor, QMC6310, Adafruit, Unified Sensor",
     "repository":
         {
@@ -16,7 +16,7 @@
                 "url": "https://github.com/GerhardMalan"
             }
         ],
-    "license": "BSD 3-Clause",
+    "license": "BSD-3-Clause",
     "homepage": "https://github.com/GM-Consult-IOT/QMC6310_Unified",
     "dependencies": 
     [

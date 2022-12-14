@@ -1,5 +1,9 @@
 <!-- QMC6310_Unified -->
 
+## 3.0.1+1
+
+* `library.json` updated.
+
 ## 3.0.1
 
 * Documentation updated.
