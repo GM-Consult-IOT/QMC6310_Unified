@@ -1,5 +1,12 @@
 <!-- QMC6310_Unified -->
 
+## 3.1.0
+
+* BREAKING: Changed axis orientation so z-axis is positive up.
+* `library.json` updated.
+* Added defines for `AXIS_ORIENTATION` and `MODE`
+* Added enum names.
+
 ## 3.0.1+2
 
 * `library.json` updated.

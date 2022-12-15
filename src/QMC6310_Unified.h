@@ -69,8 +69,14 @@
 /// @brief The QMC6310 has fixed I2C address 0x1c as per data sheet.
 #define QMC6310_ADDRESS_MAG 0x1c 
 
+/// @brief The orientation of the magenetometer axes. Set to 0x06 for z up.
+#define AXIS_ORIENTATION 0x06
+
+/// @brief The QMC6310 mode setting. Set to 0xC3 for NORMAL mode, output data rate (ODR) 200kHz
+#define MODE 0xC3
+
 /// @brief Enumeration of all the addressable registers as per data sheet.
-typedef enum {
+typedef enum QMC6310_REGISTER {
   QMC6310_REGISTER_MAG_CID_REG_M = 0x00,    // ID register. Value is always 0x80
   QMC6310_REGISTER_MAG_CRA_REG_M = 0x0A,    // Control register 1
   QMC6310_REGISTER_MAG_CRB_REG_M = 0x0B,    // Control register 2
@@ -85,7 +91,7 @@ typedef enum {
 } qmc6310MagRegisters_t;
 
 /// @brief Magnetometer gain settings as per data sheet. 
-typedef enum {
+typedef enum QMC6310_MAGGAIN {
   QMC6310_MAGGAIN_30 = 0b00000000, // +/- 30 Gauss
   QMC6310_MAGGAIN_12 = 0b00000100, // +/- 12 Gauss (default)
   QMC6310_MAGGAIN_8 = 0b00001000, // +/- 8 Gauss

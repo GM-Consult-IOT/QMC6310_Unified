@@ -137,7 +137,7 @@ bool QMC6310_Unified::begin() {
   Wire.begin();
 
   // Define the sign for X Y and Z axis)
-  write8(QMC6310_ADDRESS_MAG, QMC6310_REGISTER_MAG_SGN_REG_M, 0x02);
+  write8(QMC6310_ADDRESS_MAG, QMC6310_REGISTER_MAG_SGN_REG_M, AXIS_ORIENTATION);
 
   // Set the gain to a known level
   setMagGain();
@@ -145,7 +145,7 @@ bool QMC6310_Unified::begin() {
   // Write to control register 1
   //  - set normal mode 
   //  - set output data rate (ODR) 200kHz
-  write8(QMC6310_ADDRESS_MAG, QMC6310_REGISTER_MAG_CRA_REG_M, 0xC3);
+  write8(QMC6310_ADDRESS_MAG, QMC6310_REGISTER_MAG_CRA_REG_M, MODE);
 
   // get the STATUS register value and return true if it not 0x00
   return status() > 0x00;
@@ -203,7 +203,7 @@ bool QMC6310_Unified::getEvent(sensors_event_t *event) {
   event->version = sizeof(sensors_event_t);
   event->sensor_id = _sensorID;
   event->type = SENSOR_TYPE_MAGNETIC_FIELD;
-  event->timestamp = 0;
+  event->timestamp = millis();
   event->magnetic.x =
       _magData.x / _QMC6310_Gauss_LSB * SENSORS_GAUSS_TO_MICROTESLA;
   event->magnetic.y =
