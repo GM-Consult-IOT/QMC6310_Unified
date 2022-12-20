@@ -164,14 +164,14 @@ bool QMC6310_Unified::begin() {
   // print the device details and settings to serial monitor if _verbose flag is set
   if (_verbose){
 
-   // print the sensor details to serial terminal
-  printSensorDetails();
+    // print the sensor details to serial terminal
+    printSensorDetails();
 
-  // print the sensor settings to serial terminal
-  printSensorSettings();
+    // print the sensor settings to serial terminal
+    printSensorSettings();
   }
 
-  // get the STATUS register value and return true if it not 0x00
+  // get the STATUS register value and return true if not 0x00
   return readStatusReg() > 0x00;
 
 }

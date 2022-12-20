@@ -76,7 +76,7 @@
 #define QMC6310_I2C_ADDRESS 0x1c 
 
 /// @brief The default field-range (sensitivity) for the device
-#define FIELD_RANGE QMC6310_FLD_RNG_8
+#define FIELD_RANGE QMC6310_FLD_RNG_2
 
 /// @brief The default orientation of the magenetometer axes with X, Y and 
 /// Z axes pointing North, West and Up respectively.
@@ -84,21 +84,21 @@
 
 /* 
 @brief The default value for Control Register 1 is 0b11001101:
-  - NORMAL mode.
-  - Output Data Rate (ODR) 200kHz.
-  - 1x Over Sampling Rate (OSR1).
-  - 1x Down Sampling Rate (OSR2).
+  - MODE => NORMAL
+  - Output Data Rate (ODR) => 50kHz
+  - Over Sampling Rate (OSR1) => 4x 
+  - Down Sampling Rate (OSR2) => 1
 */
-#define CTRL_REG_1 0b00111101
+#define CTRL_REG_1 0b00010101
 
 /* 
-@brief The default value for Control Register 2 is 0b11001101:
-  - NORMAL mode.
-  - Output Data Rate (ODR) 200kHz.
-  - 1x Over Sampling Rate (OSR1).
-  - 1x Down Sampling Rate (OSR2).
+@brief The default value for Control Register 2 is 0b00001100:
+  - SOFT_RST => off.
+  - SELF_TEST => off.
+  - RNG => 2 Gauss.
+  - SET/RESET MODE.=> Set and reset on
 */
-#define CTRL_REG_2 0b00000000
+#define CTRL_REG_2 0b00001100
 
 /* @brief Enumeration of all the addressable QMC6310 registers as per data sheet. 
 
