@@ -1,18 +1,23 @@
-# QMC6310 (3-Axis Magnetometer) Unified Sensor Driver
+**QMC6310 (3-Axis Magnetometer) Unified Sensor Driver (VERSION 4)**
 
 A Unified Sensor driver for the QMC6310 magnetometer/compass IC from QST Corporation.
 
-## Contents
-- [QMC6310 (3-Axis Magnetometer) Unified Sensor Driver](#qmc6310-3-axis-magnetometer-unified-sensor-driver)
-  - [Contents](#contents)
-  - [Overview](#overview)
-  - [About the QMC6310](#about-the-qmc6310)
-  - [Dependencies](#dependencies)
-  - [Usage](#usage)
-  - [Calibration](#calibration)
-  - [Licensing](#licensing)
-  - [Issues](#issues)
+**BREAKING CHANGES**
 
+*Version 4 of the QMC6310_Unified driver library is a complete re-write. This means many of the internals and non-interface elements have changed. The Adafruit Unified Sensor interface is still strictly implemented, however, so the breaking changes will only affect code that used device-specific fields, enums and structs.*
+
+*We have also added a host of methods that allow setting of device parameters and reading the device registers. This allows implementers to customize the device and also obtain diagnostic data during operation.*
+
+**Contents**
+- [Overview](#overview)
+- [About the QMC6310](#about-the-qmc6310)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [Calibration](#calibration)
+- [Licensing](#licensing)
+- [Issues](#issues)
+- [References](#references)
+  
 ## Overview
 
 This library is a driver for the [QMC6310 magnetometer/compass IC from QST Corporation](https://www.qstcorp.com/en_comp_prod/QMC6310). It implements the [Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor) interface.
@@ -93,7 +98,6 @@ void loop() {
 }
 
 ```
-
 Refer to the [sensor example](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/examples/QMC6310_sensor/QMC6310_sensor.ino) for calculation of heading.
 
 (*[back to top](#)*)
@@ -110,7 +114,7 @@ More information on sensor calibration [here](https://www.digikey.com.au/en/make
 
 This library is open-source under the [BSD 3-Clause license](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/LICENSE) and redistribution and use in source and binary forms, with or without modification, are permitted, provided that the license conditions are met.
 
-The original HMC5883 driver was written by Kevin Townsend for Adafruit Industries. The Adafruit library is open-source under the [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html). *Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!*
+The [Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor)  is open-source under the [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html). *Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!*
 
 (*[back to top](#)*)
 
@@ -119,3 +123,12 @@ The original HMC5883 driver was written by Kevin Townsend for Adafruit Industrie
 If you find a bug please fill an [issue](https://github.com/GM-Consult-IOT/QMC6310_Unified/issues).  
 
 (*[back to top](#)*)
+
+## References
+
+* [Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor)
+* [How to Calibrate a Magnetometer](https://www.digikey.com.au/en/maker/projects/how-to-calibrate-a-magnetometer/50f6bc8f36454a03b664dca30cf33a8b) 
+* [License](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/LICENSE)
+* [QMC6310 datasheet](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/main/assets/QMC6310_Datasheet.pdf)
+* [QMC6310 magnetometer/compass IC from QST Corporation](https://www.qstcorp.com/en_comp_prod/QMC6310)
+* [QMC6310_Unified example code](https://github.com/GM-Consult-IOT/QMC6310_Unified/blob/master/examples/QMC6310_sensor/QMC6310_sensor.ino)
